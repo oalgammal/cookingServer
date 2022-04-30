@@ -1,0 +1,37 @@
+{
+  "name": "mongodb-driver-quick-start",
+  "version": "1.0.0",
+  "description": "Starter project for the MongoDB Node.js Driver Quick Start.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --single-quote --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mongodb-university/js-starter.git"
+  },
+  "author": "Developer Education Team",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mongodb-university/js-starter/issues"
+  },
+  "homepage": "https://github.com/mongodb-university/js-starter#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6"
+  },
+  "prettier": {
+    "semi": true
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.1"
+  }
+
+}

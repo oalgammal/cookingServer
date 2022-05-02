@@ -58,6 +58,21 @@ async function addRecipe(data) {
   
 }
 
+async function editRecipe(data) {
+  
+    const filter = { id: data.id };
+    // this option instructs the method to create a document if no documents match the filter
+    const options = { upsert: true };
+    // create a document that sets the plot of the movie
+    const updateDoc = {
+      $set: data,
+    };
+    const result = await globalRecipes.updateOne(filter, updateDoc, options);
+    console.log(
+      `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`,
+    );
+   
+}
 
 async function runDelete(data) {
 
@@ -83,8 +98,14 @@ app.post('/delete',(req,res)=>{
 app.post('/addNew',(req,res)=>{
   // console.log(req.body)
   conn().then(()=>{addRecipe(req.body).catch(console.dir)})
+  
 });
 
+app.post('/editrecipe',(req,res)=>{
+  // console.log(req.body)
+  conn().then(()=>{editRecipe(req.body).catch(console.dir)})
+  
+});
 
 
 
